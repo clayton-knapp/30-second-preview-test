@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import data from './data.js';
+
 
 function App() {
+
+  // console.log(data);
+  // console.log(data.items);
+  const songs = data.items.map((song, i) => 
+  {
+    console.log(song.track);
+    const triviaObj = {};
+    triviaObj.artist = song.track.artists[0].name;
+    triviaObj.album = song.track.album.name;
+    // console.log('OBJ', triviaObj);
+
+    // const url = song.track.preview_url;
+    // console.log(url);
+  }
+  );
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      do stuff here
     </div>
   );
 }
