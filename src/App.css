@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.playlist {
+  display: inline-block;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 20px;
+  padding: 10px;
+}

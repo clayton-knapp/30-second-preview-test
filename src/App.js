@@ -1,30 +1,28 @@
 import './App.css';
-import data from './data.js';
+import GameSelection from './GameSelection';
+import Game from './Game';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
 
 
 function App() {
 
-  // console.log(data);
-  // console.log(data.items);
-  const songs = data.items.map((song, i) => 
-  {
-    console.log(song.track);
-    const triviaObj = {};
-    triviaObj.artist = song.track.artists[0].name;
-    triviaObj.album = song.track.album.name;
-    // console.log('OBJ', triviaObj);
-
-    // const url = song.track.preview_url;
-    // console.log(url);
-  }
-  );
-
-
 
   return (
-    <div className="App">
-      do stuff here
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path ="/Game/:id/:name">
+          <Game />
+        </Route>
+        <Route exact path="/">
+          <GameSelection />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
